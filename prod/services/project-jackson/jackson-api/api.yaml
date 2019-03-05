@@ -50,13 +50,13 @@ spec:
         subset: stable
         port: 
           number: 8080
-      weight:  50 
+      weight:  0 
     - destination:
         host: "jackson-api.default.svc.cluster.local"
         subset: canary
         port: 
           number: 8080
-      weight:  50 
+      weight:  100 
      # WARNING: THIS IS REALLY MESSY. FIX!
     match:
     
