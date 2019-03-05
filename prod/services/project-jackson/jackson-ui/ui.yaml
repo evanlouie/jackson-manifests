@@ -24,8 +24,9 @@ spec:
   hosts:
     # Services in Kubernetes expose their endpoint using a common DNS pattern.
     # It looks like: <Service Name>.<Namespace Name>.svc.cluster.local
-    # if not a FQDN then Istio assumes default namespace
+    # if not a FQDN then Istio assumes the namespace of the THIS VirtualService
     - "jackson-ui.default.svc.cluster.local"
+    - "*"
   http:
   - route:
     - destination:
