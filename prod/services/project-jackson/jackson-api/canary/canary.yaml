@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-app-api
-          image: "mtarng/jackson-api:v1.0"
+          image: "mtarng/jackson-api:v1.1-peoplehobby"
           imagePullPolicy: Always
           resources:
             limits:
