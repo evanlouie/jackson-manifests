@@ -41,7 +41,7 @@ spec:
     # Services in Kubernetes expose their endpoint using a common DNS pattern.
     # It looks like: <Service Name>.<Namespace Name>.svc.cluster.local
     # if not a FQDN then Istio assumes the namespace of the THIS VirtualService
-    - "jackson-api.default.svc.cluster.local"
+    # - "jackson-api.default.svc.cluster.local"
     - "*"
   http:
   - route:
@@ -57,4 +57,13 @@ spec:
         port: 
           number: 8080
       weight:  50 
+     # WARNING: THIS IS REALLY MESSY. FIX!
+    match:
+    
+    - uri:
+      
+        prefix: /api 
+      
+    
+    
 
