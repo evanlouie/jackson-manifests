@@ -25,17 +25,17 @@ spec:
     # Services in Kubernetes expose their endpoint using a common DNS pattern.
     # It looks like: <Service Name>.<Namespace Name>.svc.cluster.local
     # if not a FQDN then Istio assumes default namespace
-    - "jackson-ui..svc.cluster.local"
+    - "jackson-ui.default.svc.cluster.local"
   http:
   - route:
     - destination:
-        host: "jackson-ui..svc.cluster.local"
+        host: "jackson-ui.default.svc.cluster.local"
         subset: stable
         port: 
           number: 8080
       weight: 
     - destination:
-        host: "jackson-ui..svc.cluster.local"
+        host: "jackson-ui.default.svc.cluster.local"
         subset: canary
         port: 
           number: 8080
