@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: spring-boot-ui
+        version: stable
     spec:
       containers:
         - name: spring-boot-app-ui
