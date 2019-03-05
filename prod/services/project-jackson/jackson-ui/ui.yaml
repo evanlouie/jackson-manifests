@@ -33,11 +33,11 @@ spec:
         subset: stable
         port: 
           number: 8080
-      weight: 
+      weight:  100 
     - destination:
         host: "jackson-ui.default.svc.cluster.local"
         subset: canary
         port: 
           number: 8080
-      weight: 
+      weight:  0 
 
