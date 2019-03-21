@@ -4,24 +4,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ubuntu-deployment
+  name: busybox-deployment
   labels:
-    app: ubuntu
+    app: busybox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ubuntu
+      app: busybox
   template:
     metadata:
       # annotations:
       #   traffic.sidecar.istio.io/excludeOutboundIPRanges: 0.0.0.0/0 # Allow all Egress traffic https://github.com/istio/istio/issues/9304
       labels:
-        app: ubuntu
+        app: busybox
     spec:
       containers:
-        - name: ubuntu
-          image: ubuntu:latest
+        - name: busybox
+          image: busybox:latest
           imagePullPolicy: Always
           command: ["/bin/bash", "-c", "--"]
           args: ["while true; do sleep 30; done;"]
